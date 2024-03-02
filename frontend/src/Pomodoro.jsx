@@ -3,7 +3,6 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { CiPlay1 } from "react-icons/ci";
 import { CiPause1 } from "react-icons/ci";
 import { GrPowerReset } from "react-icons/gr";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Pomodoro = ({setAuthenticated}) => {
@@ -103,12 +102,12 @@ const Pomodoro = ({setAuthenticated}) => {
     setIsPanelOpen(!isPanelOpen);
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    setAuthenticated(false);
-    navigate('/login');
-  }
+  // const handleLogout = () => {
+  //   localStorage.removeItem('accessToken');
+  //   localStorage.removeItem('refreshToken');
+  //   setAuthenticated(false);
+  //   navigate('/login');
+  // }
 
   return (
     <div className={`transition-all duration-1000 flex flex-col items-center justify-center min-h-screen ${isActive && isPomodoroActive ? " bg-gray-900 text-gray-700" : " bg-gray-500 text-gray-800"}`}>
@@ -215,12 +214,12 @@ const Pomodoro = ({setAuthenticated}) => {
         >
           <GrPowerReset />
         </button>
-        <button
+        {/* <button
           onClick={handleLogout}
           className="px-4 py-2 bg-orange-400 text-white rounded hover:bg-orange-500"
         >
           Logout
-        </button>
+        </button> */}
       </div>
     </div>
   );
