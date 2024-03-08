@@ -111,15 +111,15 @@ const Pomodoro = ({setAuthenticated}) => {
 
   return (
     <div className={`transition-all duration-1000 flex flex-col items-center justify-center min-h-screen ${isActive && isPomodoroActive ? " bg-gray-900 text-gray-700" : " bg-gray-500 text-gray-800"}`}>
-      <div className="text-4xl font-bold mb-4 text-center">Pomodoro Timer</div>
-      <div className="grid grid-cols-3 gap-4 mb-4">
+      <div className=" text-3xl lg:text-5xl font-bold mb-4 text-center">Pomodoro Timer</div>
+      <div className=" text-sm lg:text-lg font-bold grid grid-cols-3 gap-4 mb-4">
         <div
           className={`flex flex-col items-center p-4 rounded-lg ${
             isPomodoroActive ? " bg-blue-200" : ""
           }`}
         >
-          <div className="text-lg font-bold">Focus Time</div>
-          <div className="text-xl">{pomodoroDuration} mins</div>
+          Focus Time
+          <div className=" font-normal text-lg">{pomodoroDuration} mins</div>
         </div>
         <div
           className={`flex flex-col items-center p-4 rounded-lg ${
@@ -128,8 +128,8 @@ const Pomodoro = ({setAuthenticated}) => {
               : ""
           }`}
         >
-          <div className="text-lg font-bold">Short Break</div>
-          <div className="text-xl">{shortBreakDuration} mins</div>
+          Short Break
+          <div className=" font-normal text-lg">{shortBreakDuration} mins</div>
         </div>
         <div
           className={`flex flex-col items-center p-4 rounded-lg ${
@@ -138,8 +138,8 @@ const Pomodoro = ({setAuthenticated}) => {
               : ""
           }`}
         >
-          <div className="text-lg font-bold">Long Break</div>
-          <div className="text-xl">{longBreakDuration} mins</div>
+          Long Break
+          <div className=" font-normal text-lg">{longBreakDuration} mins</div>
         </div>
       </div>
       <div className="relative">
@@ -156,7 +156,7 @@ const Pomodoro = ({setAuthenticated}) => {
       </div>
       <IoSettingsOutline className="text-blue-400 size-10 hover:cursor-pointer" onClick={togglePanel} />
 
-      <div className={`absolute left-0 rounded-lg bg-transparent w-48 shadow-md shadow-blue-200 text-white transform transition-transform ${isPanelOpen ? 'translate-x-0' : '-translate-x-full'} ease-in-out duration-300 z-20`}>
+      <div className={`absolute top-32 left-0 rounded-lg bg-black md:bg-transparent w-48 shadow-md shadow-blue-200 text-white transform transition-transform ${isPanelOpen ? 'translate-x-0' : '-translate-x-full'} ease-in-out duration-300 z-20`}>
         <div className="p-4">
           In Minutes <br/>
           <label htmlFor="pomodoroDuration"> Pomodoro Duration: </label>
