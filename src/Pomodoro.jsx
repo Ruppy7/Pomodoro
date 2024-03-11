@@ -16,7 +16,7 @@ const Pomodoro = ({setAuthenticated}) => {
   const [isActive, setIsActive] = useState(false);
   const [completedPomodoros, setCompletedPomodoros] = useState(2);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-
+  const [isRotated, setisRotated] = useState(false);
 
   useEffect(() => {
     let intervalID;
@@ -102,6 +102,10 @@ const Pomodoro = ({setAuthenticated}) => {
     setIsPanelOpen(!isPanelOpen);
   };
 
+  const toggleRotation = () => {
+    setisRotated(!isRotated);
+  }
+
   // const handleLogout = () => {
   //   localStorage.removeItem('accessToken');
   //   localStorage.removeItem('refreshToken');
@@ -154,7 +158,7 @@ const Pomodoro = ({setAuthenticated}) => {
           {isPomodoroActive ? formatTime(pomodoroTime) : formatTime(breakTime)}
         </div>
       </div>
-      <IoSettingsOutline className="text-blue-400 size-10 hover:cursor-pointer" onClick={togglePanel} />
+      <IoSettingsOutline className={`text-blue-400 transition-all duration-700 size-10 hover:cursor-pointer ${isRotated ? 'rotate-90' : ""}`} onClick={() => {togglePanel(); toggleRotation();}} />
 
       <div className={`absolute top-32 left-0 rounded-lg bg-black md:bg-transparent w-48 shadow-md shadow-blue-200 text-white transform transition-transform ${isPanelOpen ? 'translate-x-0' : '-translate-x-full'} ease-in-out duration-300 z-20`}>
         <div className="p-4">
